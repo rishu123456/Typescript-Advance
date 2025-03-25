@@ -1,11 +1,15 @@
 interface user {
     name : string
     age : number
+    email:string
+    address: string
+    id: number
 }
 
-function sumOfAge(user1:user, user2:user){
-    return user1.age +user2.age;
+type user1 = Pick<user, 'name' | "age" | "email">
+
+function updateuser(updateprops:user1){
+    //hit the database to update only restricted parts
 }
 
-const age = sumOfAge({name:"rish",age:24},{name:"rhh",age:34});
-console.log(age);
+//defination- pick let us pick specific value from types and interface as well as above example
