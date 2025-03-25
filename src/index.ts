@@ -8,7 +8,9 @@ interface user {
 
 type user1 = Pick<user, 'name' | "age" | "email">
 
-function updateuser(updateprops:user1){
+type user2 =Partial<user1>
+
+function updateuser(updateprops:user2){
     //hit the database to update only restricted parts
 }
 
